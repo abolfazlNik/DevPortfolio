@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Galgo';
+    src: url('/fonts/Galgo-Regular.woff2') format('woff2'),
+        url('/fonts/Galgo-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'OpenSauceSans';
+    src: url('/fonts/Galgo-Regular.woff2') format('woff2'),
+        url('/fonts/Galgo-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.font-galgo {
+    font-family: 'Galgo', sans-serif;
+}
+
+.custom-container {
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-scroll {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.section-scroll {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.about-title {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.about-title span {
+    background-image: linear-gradient(90deg, #fff 50%, #606161 0);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    background-position: 100% 0px;
+    display: inline-flex;
+    
+}
