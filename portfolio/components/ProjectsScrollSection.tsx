@@ -1,15 +1,12 @@
 import Image from "next/image"
 import React, { useEffect } from "react"
-import dynamic from "next/dynamic"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const ProjectsScrollSection = ({ sections }) => {
   useEffect(() => {
-    // Register ScrollTrigger with gsap
     gsap.registerPlugin(ScrollTrigger)
 
-    // Function to update the number
     const updateNumber = (number) => {
       gsap.to(".secondary-number", {
         text: number.toString().padStart(2, "0"),
@@ -17,7 +14,6 @@ const ProjectsScrollSection = ({ sections }) => {
       })
     }
 
-    // Create ScrollTrigger instances for each section
     sections.forEach((section, index) => {
       ScrollTrigger.create({
         trigger: `#section-${index + 1}`,
@@ -28,7 +24,6 @@ const ProjectsScrollSection = ({ sections }) => {
       })
     })
 
-    // Cleanup function to kill all ScrollTriggers on component unmount
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
     }
