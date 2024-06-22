@@ -7,14 +7,14 @@ const ProjectsScrollSection = ({ sections }) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
-    const updateNumber = (number) => {
+    const updateNumber = (number: number) => {
       gsap.to(".secondary-number", {
         text: number.toString().padStart(2, "0"),
         duration: 0.3,
       })
     }
 
-    sections.forEach((section, index) => {
+    sections.forEach((section, index: number) => {
       ScrollTrigger.create({
         trigger: `#section-${index + 1}`,
         start: "top center",
