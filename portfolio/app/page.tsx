@@ -3,38 +3,16 @@ import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { Linear, gsap } from "gsap"
 import nik from "@/public/nik-name.svg"
+
 import Header from "@/components/Header"
 import DynamicScrollTriggerComponent from "@/components/DynamicScrollTriggerComponent"
 import ProjectsScrollSection from "@/components/ProjectsScrollSection"
 import About from "@/components/About"
-import { Observer } from "gsap/Observer"
-import Marquee from "react-fast-marquee"
+import MarqueeScroll from "@/components/MarqueeScroll"
 
 export default function Home() {
-  const [lastScrollTop, setLastScrollTop] = useState(0)
-  const [direction, setDirection] = useState<"left" | "right">("left")
   const aboutRef = useRef(null)
   const projectRef = useRef(null)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-      if (scrollTop > lastScrollTop) {
-        console.log("Scrolling down")
-        setDirection("left")
-      } else {
-        console.log("Scrolling up")
-        setDirection("right")
-      }
-      setLastScrollTop(scrollTop)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [lastScrollTop])
 
   return (
     <>
@@ -77,16 +55,7 @@ export default function Home() {
       {/* <div className="bg-custom-black h-screen flex items-center">
         <div className="text-white text-9xl">asdf</div>
       </div> */}
-      <Marquee autoFill speed={200} direction={direction}>
-        <span className="text-white text-6xl">Scrolling Text 1</span>
-        <span className="text-white text-6xl">Scrolling Text 2</span>
-        <span className="text-white text-6xl">Scrolling Text 3</span>
-      </Marquee>
-      <Marquee autoFill speed={200} direction="left">
-        <span className="text-white text-6xl">Scrolling Text 1</span>
-        <span className="text-white text-6xl">Scrolling Text 2</span>
-        <span className="text-white text-6xl">Scrolling Text 3</span>
-      </Marquee>
+      <MarqueeScroll />
     </>
   )
 }
