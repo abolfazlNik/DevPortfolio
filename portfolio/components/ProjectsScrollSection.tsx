@@ -1,53 +1,76 @@
+"use client"
 import Image from "next/image"
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import projectImage from "../public/project-1.png"
+gsap.registerPlugin(ScrollTrigger)
 
-const ProjectsScrollSection = ({ sections }) => {
+const ProjectsScrollSection = () => {
+  const numberRef = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
+    if (typeof window !== "undefined" && typeof document !== "undefined") {
+      const sections = document.querySelectorAll(".box")
 
-    const updateNumber = (number: number) => {
-      gsap.to(".secondary-number", {
-        text: number.toString().padStart(2, "0"),
-        duration: 0.3,
+      sections.forEach((section, index) => {
+        gsap.from(section, {
+          scrollTrigger: {
+            trigger: section,
+            start: "top center",
+            end: "bottom center",
+            scrub: false,
+            onUpdate: (self) => {
+              if (self.isActive) {
+                if (numberRef.current) {
+                  numberRef.current.textContent = `0${index + 1}.`
+                }
+              }
+            },
+          },
+        })
       })
     }
-
-    sections.forEach((section, index: number) => {
-      ScrollTrigger.create({
-        trigger: `#section-${index + 1}`,
-        start: "top center",
-        end: "bottom center",
-        onEnter: () => updateNumber(index + 1),
-        onEnterBack: () => updateNumber(index + 1),
-      })
-    })
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-    }
-  }, [sections])
+  }, [])
   return (
-    <div className="custom-container flex-col flex">
-      {sections.map((section, index: number) => (
+    <div className="bg-custom-black relative h-[300vh]">
+      <div className="custom-container flex justify-between h-full">
         <div
-          key={index}
-          id={`section-${index + 1}`}
-          className="flex items-center h-screen justify-between sticky top-0 content"
+          ref={numberRef}
+          className="flex text-white text-[18rem] items-center h-screen justify-end sticky top-0 w-[26rem]"
         >
-          <div className="text-[16rem] text-white w-80 secondary-number">
-            {index === 0 ? "01" : ""}
+          01
+        </div>
+        <div className="w-[calc(100%_-_45rem)] mx-auto">
+          <div className="box h-screen flex items-center justify-center text-white sticky top-0">
+            <div className="bg-custom-gray-dark backdrop-blur-xl rounded-2xl bg-opacity-30 p-6 rotate-0">
+              <Image
+                className="rounded-lg overflow-hidden w-full h-full object-cover"
+                src={projectImage}
+                alt="project image"
+              />
+            </div>
           </div>
-          <div className="bg-custom-gray-dark backdrop-blur-xl rounded-2xl bg-opacity-30 p-6 w-[calc(100%-23rem)] rotate-3">
-            <Image
-              className="rounded-lg overflow-hidden w-full h-full object-cover"
-              src={section.image}
-              alt={section.alt}
-            />
+          <div className="box h-screen flex items-center justify-center text-white sticky top-0">
+            <div className="bg-custom-gray-dark backdrop-blur-xl rounded-2xl bg-opacity-30 p-6 -rotate-3">
+              <Image
+                className="rounded-lg overflow-hidden w-full h-full object-cover"
+                src={projectImage}
+                alt="project image"
+              />
+            </div>
+          </div>
+          <div className="box h-screen flex items-center justify-center text-white sticky top-0">
+            <div className="bg-custom-gray-dark backdrop-blur-xl rounded-2xl bg-opacity-30 p-6 rotate-3">
+              <Image
+                className="rounded-lg overflow-hidden w-full h-full object-cover"
+                src={projectImage}
+                alt="project image"
+              />
+            </div>
           </div>
         </div>
-      ))}
+      </div>
     </div>
   )
 }

@@ -1,80 +1,45 @@
 "use client"
-
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import { gsap } from "gsap"
+import { Linear, gsap } from "gsap"
 import nik from "@/public/nik-name.svg"
 import Header from "@/components/Header"
-import { useEffect, useRef } from "react"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import projectImage from "../public/project-1.png"
 import DynamicScrollTriggerComponent from "@/components/DynamicScrollTriggerComponent"
 import ProjectsScrollSection from "@/components/ProjectsScrollSection"
-
-gsap.registerPlugin(ScrollTrigger)
-
-const sections = [
-  { image: "", alt: "Project Image 1" },
-  { image: "", alt: "Project Image 2" },
-  { image: "", alt: "Project Image 3" },
-]
+import About from "@/components/About"
+import { Observer } from "gsap/Observer"
+import Marquee from "react-fast-marquee"
 
 export default function Home() {
+  const [lastScrollTop, setLastScrollTop] = useState(0)
+  const [direction, setDirection] = useState<"left" | "right">("left")
   const aboutRef = useRef(null)
   const projectRef = useRef(null)
-  const textRef = useRef(null)
-  const text = `Creative Front-end Developer I have more than 5 years of experience using JavaScript and CSS to create responsive and adaptive websites. Having experience in ReactJS and NextJs.`
-  const words = text.split(" ")
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".about-title span",
-        scrub: true,
-        start: "top 80%",
-        end: "bottom 50%",
-      },
-    })
-    gsap.utils.toArray(".about-title span").forEach((word) => {
-      tl.to(word, {
-        backgroundPosition: `0% 0px`,
-      })
-    })
-  }, [])
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      if (scrollTop > lastScrollTop) {
+        console.log("Scrolling down")
+        setDirection("left")
+      } else {
+        console.log("Scrolling up")
+        setDirection("right")
+      }
+      setLastScrollTop(scrollTop)
+    }
 
-  //   useEffect(() => {
-  //     const contents = document.querySelectorAll(".content")
+    window.addEventListener("scroll", handleScroll)
 
-  //     contents.forEach((content, i) => {
-  //       const number = content.querySelector(".secondary-number")
-
-  //       const tl = gsap.timeline({
-  //         scrollTrigger: {
-  //           trigger: content,
-  //           start: "top 0%",
-  //           pin: number,
-  //           markers: true,
-  //           onUpdate: (self) => {
-  //             number.textContent = progress >= 0.5 ? `0${i + 2}` : `0${i + 1}`
-  //           },
-  //           onEnterBack: () => {
-  //             const progress = tl.progress()
-  //             number.textContent = progress >= 0.5 ? `0${i + 2}` : `0${i + 1}`
-  //           },
-  //         },
-  //       })
-
-  //       tl.to(number, {
-  //         duration: 0.2,
-  //         ease: "power1",
-  //       })
-  //     })
-  //   }, [])
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [lastScrollTop])
 
   return (
     <>
-      <div className=" h-screen">
+      <div className="h-screen">
         <Header />
-
         <Image
           className="w-full max-h-[800px] select-none"
           src={nik}
@@ -94,15 +59,7 @@ export default function Home() {
           </div>,
         ]}
       />
-      <div className="h-screen bg-custom-black flex relative items-center justify-center">
-        <div ref={textRef} className="custom-container about-title">
-          {words.map((word, index) => (
-            <span className="pr-4" key={index}>
-              {word}
-            </span>
-          ))}
-        </div>
-      </div>
+      <About />
       <DynamicScrollTriggerComponent
         elements={[
           <div
@@ -116,12 +73,20 @@ export default function Home() {
           </div>,
         ]}
       />
-      <div className="bg-custom-black relative h-screen">
-        <ProjectsScrollSection sections={sections} />
-      </div>
-      <div className="bg-custom-black h-screen">
-        <div className="">asdf</div>
-      </div>
+      <ProjectsScrollSection />
+      {/* <div className="bg-custom-black h-screen flex items-center">
+        <div className="text-white text-9xl">asdf</div>
+      </div> */}
+      <Marquee autoFill speed={200} direction={direction}>
+        <span className="text-white text-6xl">Scrolling Text 1</span>
+        <span className="text-white text-6xl">Scrolling Text 2</span>
+        <span className="text-white text-6xl">Scrolling Text 3</span>
+      </Marquee>
+      <Marquee autoFill speed={200} direction="left">
+        <span className="text-white text-6xl">Scrolling Text 1</span>
+        <span className="text-white text-6xl">Scrolling Text 2</span>
+        <span className="text-white text-6xl">Scrolling Text 3</span>
+      </Marquee>
     </>
   )
 }
