@@ -37,11 +37,12 @@ const ProjectsScrollSection = () => {
       <div className="custom-container flex justify-between h-full">
         <div
           ref={numberRef}
-          className="flex text-white text-[18rem] items-center h-screen justify-end sticky top-0 w-[26rem]"
+          className="flex text-white text-[18vw] w-[25%] items-center h-screen justify-end sticky top-0"
         >
           01
         </div>
-        <div className="w-[calc(100%_-_45rem)] mx-auto">
+        {/* w-[calc(100%_-_45rem)] */}
+        <div className="w-[70%]">
           <div className="box h-screen flex items-center justify-center text-white sticky top-0">
             <div className="bg-custom-gray-dark backdrop-blur-xl rounded-2xl bg-opacity-30 p-6 rotate-0">
               <Image

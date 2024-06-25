@@ -2,61 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 @font-face {
-    font-family: 'Galgo';
-    src: url('/fonts/Galgo-Regular.woff2') format('woff2'),
-        url('/fonts/Galgo-Regular.woff') format('woff');
+  font-family: "Galgo";
+  src: url("/fonts/Galgo-Regular.woff2") format("woff2"),
+    url("/fonts/Galgo-Regular.woff") format("woff");
 }
 
 @font-face {
-    font-family: 'OpenSauceSans';
-    src: url('/fonts/Galgo-Regular.woff2') format('woff2'),
-        url('/fonts/Galgo-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "OpenSauceSans";
+  src: url("/fonts/Galgo-Regular.woff2") format("woff2"),
+    url("/fonts/Galgo-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
 
 .font-open-sans {
-    font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .font-galgo {
-    font-family: 'Galgo', sans-serif;
+  font-family: "Galgo", sans-serif;
 }
 
 .custom-container {
-    margin-left: 70px;
-    margin-right: 70px;
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container-scroll {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
 }
 
 .section-scroll {
-    height: 100vh;
-    scroll-snap-align: start;
+  height: 100vh;
+  scroll-snap-align: start;
 }
 
 .about-title {
-    font-size: 4rem;
-    text-align: center;
+  font-size: 4rem;
+  text-align: center;
 }
 
 .about-title span {
-    background-image: linear-gradient(90deg, #fff 50%, #606161 0);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200%;
-    background-position: 100% 0px;
-    display: inline-flex;
-    
+  background-image: linear-gradient(90deg, #fff 50%, #606161 0);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  background-position: 100% 0px;
+  display: inline-flex;
+}
+
+.container-scroll {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.scroll-snap {
+  scroll-snap-align: start;
+}
+
+.experience-section::before {
+  position: absolute;
+  content: "";
+  top: 0px;
+  height: 240px;
+  width: 100%;
+  z-index: 1;
+  background: radial-gradient(
+      circle,
+      rgb(62 52 102) 0%,
+      rgba(6, 6, 6, 0.515) 80%
+    )
+    rgba(6, 6, 6, 1) 100%;
+  box-shadow: inset -1px -45px 90px 20px #060606;
 }
