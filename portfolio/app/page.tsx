@@ -1,7 +1,6 @@
 "use client"
 import { useRef } from "react"
 import Image from "next/image"
-import Header from "@/app/components/Header"
 import DynamicScrollTriggerComponent from "@/app/components/DynamicScrollTriggerComponent"
 import ProjectsScrollSection from "@/app/components/ProjectsScrollSection"
 import About from "@/app/components/About"
@@ -9,13 +8,21 @@ import MarqueeScroll from "@/app/components/MarqueeScroll"
 import Skills from "@/app/components/skills"
 import Experience from "@/app/components/experience"
 import { nikName } from "@/public/images"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Header from "./shared/components/header"
+import BallButton from "./shared/components/bull-button"
+import { Scrollbar } from "smooth-scrollbar-react"
+import type { Scrollbar as BaseScrollbar } from "smooth-scrollbar/scrollbar"
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
+  const scrollbar = useRef<BaseScrollbar | null>(null)
   const aboutRef = useRef(null)
   const projectRef = useRef(null)
 
   return (
-    <>
+    <Scrollbar ref={scrollbar}>
       <div className="h-screen">
         <Header />
         <Image className="w-full h-[85%] select-none" src={nikName} alt="nik" />
@@ -51,7 +58,8 @@ export default function Home() {
       <MarqueeScroll />
       <Skills />
       <Experience />
-      <div className="h-screen w-full bg-[#8276B9]"></div>
-    </>
+
+      <BallButton />
+    </Scrollbar>
   )
 }
