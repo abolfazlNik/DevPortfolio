@@ -4,10 +4,16 @@ export interface IDetails {
   compony: string
   details: string
   colorCompony: string
+  id: number
 }
 
 export interface IRenderSkills {
   start?: number
   end?: number
-  gap?: number  
+  gap?: number
+}
+
+export interface ILinks {
+  name: string
+  link: string
 }

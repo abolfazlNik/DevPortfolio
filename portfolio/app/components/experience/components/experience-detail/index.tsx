@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { IDetails } from "@/app/shared/types"
+import experienceData from "@/data/experience.json"
 
 const ExperienceDetails: FC<IDetails> = ({
   date,
@@ -8,6 +9,7 @@ const ExperienceDetails: FC<IDetails> = ({
   details,
   compony,
   colorCompony,
+  id,
 }) => {
   const lineRef = useRef<HTMLDivElement | null>(null)
 
@@ -28,6 +30,11 @@ const ExperienceDetails: FC<IDetails> = ({
       )
     }
   }, [])
+
+  const lastItemId =
+    experienceData.length > 0
+      ? experienceData[experienceData.length - 1].id
+      : null
 
   return (
     <>
@@ -51,12 +58,14 @@ const ExperienceDetails: FC<IDetails> = ({
           </div>
         </div>
       </div>
-      <div className="w-full h-[0.5px] bg-[#292342] first-of-type:bg-red-600 relative">
-        <div
-          ref={lineRef}
-          className="w-[60px] absolute h-[1px] bg-[#3e3466a8] z-[2] shadow-[0_0_8px_2px_#3e3466a8] top-0 left-0"
-        />
-      </div>
+      {lastItemId !== id && (
+        <div className="w-full h-[0.5px] bg-[#292342] first-of-type:bg-red-600 relative">
+          <div
+            ref={lineRef}
+            className="w-[60px] absolute h-[1px] bg-[#3e3466a8] z-[2] shadow-[0_0_8px_2px_#3e3466a8] top-0 left-0"
+          />
+        </div>
+      )}
     </>
   )
 }
