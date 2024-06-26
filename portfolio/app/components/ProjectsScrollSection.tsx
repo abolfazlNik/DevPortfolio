@@ -3,7 +3,7 @@ import Image from "next/image"
 import React, { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import projectImage from "../public/project-1.png"
+import { project } from "@/public/images"
 gsap.registerPlugin(ScrollTrigger)
 
 const ProjectsScrollSection = () => {
@@ -41,13 +41,12 @@ const ProjectsScrollSection = () => {
         >
           01
         </div>
-        {/* w-[calc(100%_-_45rem)] */}
         <div className="w-[70%]">
           <div className="box h-screen flex items-center justify-center text-white sticky top-0">
             <div className="bg-custom-gray-dark backdrop-blur-xl rounded-2xl bg-opacity-30 p-6 rotate-0">
               <Image
                 className="rounded-lg overflow-hidden w-full h-full object-cover"
-                src={projectImage}
+                src={project}
                 alt="project image"
               />
             </div>
@@ -56,7 +55,7 @@ const ProjectsScrollSection = () => {
             <div className="bg-custom-gray-dark backdrop-blur-xl rounded-2xl bg-opacity-30 p-6 -rotate-3">
               <Image
                 className="rounded-lg overflow-hidden w-full h-full object-cover"
-                src={projectImage}
+                src={project}
                 alt="project image"
               />
             </div>
@@ -65,7 +64,7 @@ const ProjectsScrollSection = () => {
             <div className="bg-custom-gray-dark backdrop-blur-xl rounded-2xl bg-opacity-30 p-6 rotate-3">
               <Image
                 className="rounded-lg overflow-hidden w-full h-full object-cover"
-                src={projectImage}
+                src={project}
                 alt="project image"
               />
             </div>
