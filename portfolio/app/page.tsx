@@ -1,15 +1,14 @@
 "use client"
 import { useRef } from "react"
 import Image from "next/image"
-import nik from "@/public/nik-name.svg"
-
-import Header from "@/components/Header"
-import DynamicScrollTriggerComponent from "@/components/DynamicScrollTriggerComponent"
-import ProjectsScrollSection from "@/components/ProjectsScrollSection"
-import About from "@/components/About"
-import MarqueeScroll from "@/components/MarqueeScroll"
-import Skills from "@/components/skills"
-import Experience from "@/components/experience"
+import Header from "@/app/components/Header"
+import DynamicScrollTriggerComponent from "@/app/components/DynamicScrollTriggerComponent"
+import ProjectsScrollSection from "@/app/components/ProjectsScrollSection"
+import About from "@/app/components/About"
+import MarqueeScroll from "@/app/components/MarqueeScroll"
+import Skills from "@/app/components/skills"
+import Experience from "@/app/components/experience"
+import { nikName } from "@/public/images"
 
 export default function Home() {
   const aboutRef = useRef(null)
@@ -19,7 +18,7 @@ export default function Home() {
     <>
       <div className="h-screen">
         <Header />
-        <Image className="w-full h-[85%] select-none" src={nik} alt="nik" />
+        <Image className="w-full h-[85%] select-none" src={nikName} alt="nik" />
       </div>
       <DynamicScrollTriggerComponent
         elements={[

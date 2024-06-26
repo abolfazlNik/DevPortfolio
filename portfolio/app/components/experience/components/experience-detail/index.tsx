@@ -1,13 +1,6 @@
-import React, { FC, useEffect, useRef, useState } from "react"
+import React, { FC, useEffect, useRef } from "react"
 import { gsap } from "gsap"
-
-interface IDetails {
-  date: string
-  headline: string
-  compony: string
-  details: string
-  colorCompony: string
-}
+import { IDetails } from "@/app/shared/types"
 
 const ExperienceDetails: FC<IDetails> = ({
   date,
@@ -16,19 +9,6 @@ const ExperienceDetails: FC<IDetails> = ({
   compony,
   colorCompony,
 }) => {
-  // const textSize = (compony: string) => {
-  //   const textLength = 3
-  //   let name = ""
-  //   let full = ""
-  //   if (compony.length > textLength) {
-  //     name = compony.slice(0, 4)
-  //     full = compony.slice(4, -2)
-  //   } else {
-  //     name = compony.slice(0, 2)
-  //     full = compony.slice(2, -2)
-  //   }
-  //   return name + full
-  // }
   const lineRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -67,15 +47,11 @@ const ExperienceDetails: FC<IDetails> = ({
             {compony}
           </h4>
           <div className="text-white text-xl leading-9 w-[85%] font-light">
-            Development and implementation of an advanced store platform
-            Designing new features and modifying the project structure for
-            better performance to customers Improved user interface and display
-            on all devices Responsible for fixing bugs and designing new
-            features, improving SEO
+            {details}
           </div>
         </div>
       </div>
-      <div className="w-full h-[0.5px] bg-[#292342] relative">
+      <div className="w-full h-[0.5px] bg-[#292342] first-of-type:bg-red-600 relative">
         <div
           ref={lineRef}
           className="w-[60px] absolute h-[1px] bg-[#3e3466a8] z-[2] shadow-[0_0_8px_2px_#3e3466a8] top-0 left-0"
