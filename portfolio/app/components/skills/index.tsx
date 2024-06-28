@@ -4,7 +4,9 @@ import skillsData from "@/data/skills.json"
 import { IRenderSkills } from "@/app/shared/types"
 
 const RenderSkills: FC<IRenderSkills> = ({ start, end, gap }) => (
-  <div className={`flex gap-${gap} items-center`}>
+  <div
+    className={`flex gap-${gap} items-center flex-wrap justify-center gap-y-3`}
+  >
     {skillsData.slice(start, end).map((item, index) => (
       <SkillItems key={index} skillName={item} />
     ))}
@@ -13,7 +15,7 @@ const RenderSkills: FC<IRenderSkills> = ({ start, end, gap }) => (
 
 const Skills = () => {
   return (
-    <div className="h-screen bg-custom-black flex flex-col justify-center items-center">
+    <div className="h-dvh bg-custom-black flex flex-col justify-center items-center">
       <h2 className="text-[8vw] text-white flex justify-center font-semibold">
         SKILLS
       </h2>

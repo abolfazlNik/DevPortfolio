@@ -5,21 +5,37 @@ import { bolt, boltFill, dev, front } from "@/public/images"
 
 const MarqueeScroll = () => {
   return (
-    <div className="h-screen flex items-center justify-center flex-col gap-16">
+    <div className="h-svh flex items-center justify-center flex-col gap-16">
       <Marquee autoFill speed={200} direction="right">
         <div className="flex items-center">
-          <Image className="mx-16" src={dev} alt="dev" />
-          <Image className="mx-16" src={bolt} alt="dev" />
-          <Image className="mx-16" src={front} alt="dev" />
-          <Image className="mx-16" src={boltFill} alt="dev" />
+          <Image
+            className="lg:mx-16 mx-8 lg:w-[450px] w-[250px]"
+            src={dev}
+            alt="dev"
+          />
+          <Image className="lg:mx-16 mx-8" src={bolt} alt="dev" />
+          <Image
+            className="lg:mx-16 mx-8 lg:w-[450px] w-[250px]"
+            src={front}
+            alt="dev"
+          />
+          <Image className="lg:mx-16 mx-8" src={bolt} alt="dev" />
         </div>
       </Marquee>
       <Marquee autoFill speed={200} direction="left">
         <div className="flex items-center">
-          <Image className="mx-16" src={dev} alt="dev" />
-          <Image className="mx-16" src={bolt} alt="dev" />
-          <Image className="mx-16" src={front} alt="dev" />
-          <Image className="mx-16" src={boltFill} alt="dev" />
+          <Image
+            className="lg:mx-16 mx-8 lg:w-[450px] w-[250px]"
+            src={dev}
+            alt="dev"
+          />
+          <Image className="lg:mx-16 mx-8" src={boltFill} alt="dev" />
+          <Image
+            className="lg:mx-16 mx-8 lg:w-[450px] w-[250px]"
+            src={front}
+            alt="dev"
+          />
+          <Image className="lg:mx-16 mx-8" src={boltFill} alt="dev" />
         </div>
       </Marquee>
     </div>
