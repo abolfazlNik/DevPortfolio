@@ -1,4 +1,8 @@
+"use client"
 import Image from "next/image"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 import React, { FC } from "react"
 import { arrow } from "@/public/images"
 import Link from "next/link"
@@ -14,7 +18,7 @@ const Links: FC<ILinks> = ({ link, name }) => (
 
 const Footer = () => {
   return (
-    <footer className="relative bottom-0 h-dvh w-full bg-[#8276B9] flex items-center justify-between font-open-sans px-[30px] sm:px-[60px] lg:pl-[70px] before:bg-[url('./../public/images/extensive-nik.svg')] before:bg-no-repeat before:absolute before:top-0 before:right-0 before:content-[''] lg:before:mix-blend-normal before:mix-blend-difference before:w-full lg:before:w-[730px] xl:before:w-[850px] before:h-full before:bg-cover">
+    <footer className="relative h-dvh w-full bg-[#8276B9] flex items-center justify-between font-open-sans px-[30px] sm:px-[60px] lg:pl-[70px] before:bg-[url('./../public/images/extensive-nik.svg')] before:bg-no-repeat before:absolute before:top-0 before:right-0 before:content-[''] lg:before:mix-blend-normal before:mix-blend-difference before:w-full lg:before:w-[730px] xl:before:w-[850px] before:h-full before:bg-cover">
       <div className="lg:w-1/2 w-full mb-10 pt-20 lg:pt-36 h-full flex justify-between flex-col z-[2]">
         <div className="lg:text-[6vw] text-7xl font-bold text-custom-black">
           Contact
