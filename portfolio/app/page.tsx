@@ -1,10 +1,8 @@
 "use client"
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { nikName } from "@/public/images"
 import { BallButton, Header } from "./shared/components"
-import Lenis from "@studio-freight/lenis"
-
 import {
   About,
   DynamicScrollTriggerComponent,
@@ -13,33 +11,28 @@ import {
   ProjectsScrollSection,
   Skills,
 } from "./components"
+import SmoothScroll from "./shared/utils/smooth-scroll"
+import TextAnimationSlideUp from "./shared/utils/text-animation-slide-up"
+import useContact from "./shared/hooks/contact"
 
 export default function Home() {
   const aboutRef = useRef(null)
   const projectRef = useRef(null)
+  const [fullName, setFullName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  SmoothScroll()
+  TextAnimationSlideUp()
+  const contact = useContact()
+  const [error, setError] = useState({})
 
-  const lenis = new Lenis({
-    duration: 1,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    direction: "vertical",
-    gestureDirection: "vertical",
-    smooth: true,
-    mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
-    infinite: false,
-  })
-
-  function raf(time: number) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
+  const submitContact = () => {
+    contact.submitForm({ fullName, email, message })
   }
-
-  requestAnimationFrame(raf)
 
   return (
     <>
-      <div className="h-svh">
+      {/* <div className="h-svh">
         <Header />
         <div className="lg:mx-[70px] mx-[22px] lg:h-[85%] h-full flex items-center justify-center">
           <Image
@@ -48,8 +41,38 @@ export default function Home() {
             alt="nik"
           />
         </div>
+      </div> */}
+
+      <div className="flex p-20 items-center justify-center space-y-3 flex-col border border-red-200">
+        <input
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+          placeholder="full name"
+          className="h-20 w-[200px] bg-white"
+          type="text"
+        />
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="email"
+          className="h-20 w-[200px] bg-white"
+          type="text"
+        />
+        <input
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="message"
+          className="h-20 w-[200px] bg-white"
+          type="text"
+        />
+        <button
+          onClick={submitContact}
+          className="bg-white w-[200px] h-20 text-black"
+        >
+          {contact.isLoading ? <>loading</> : <>submit</>}
+        </button>
       </div>
-      <DynamicScrollTriggerComponent
+      {/* <DynamicScrollTriggerComponent
         elements={[
           <div
             key={"about"}
@@ -57,9 +80,9 @@ export default function Home() {
             className="bg-custom-white select-none h-svh flex items-center justify-center"
           >
             <div className="custom-container">
-              <h2 className="lg:text-[12vw] text-[20vw] font-semibold">
+              <span className="lg:text-[12vw] text-[20vw] font-semibold text-slide-up">
                 ABOUT.
-              </h2>
+              </span>
             </div>
           </div>,
         ]}
@@ -73,7 +96,7 @@ export default function Home() {
             className="bg-custom-white select-none h-svh flex items-center justify-center"
           >
             <div className="custom-container">
-              <h2 className="lg:text-[12vw] text-[16vw] font-semibold">
+              <h2 className="lg:text-[12vw] text-[16vw] text-slide-up font-semibold">
                 PROJECTS.
               </h2>
             </div>
@@ -84,7 +107,7 @@ export default function Home() {
       <MarqueeScroll />
       <Skills />
       <Experience />
-      <BallButton />
+      <BallButton /> */}
     </>
   )
 }

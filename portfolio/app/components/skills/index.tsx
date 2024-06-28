@@ -16,7 +16,7 @@ const RenderSkills: FC<IRenderSkills> = ({ start, end, gap }) => (
 const Skills = () => {
   return (
     <div className="h-screen bg-custom-black flex flex-col justify-center items-center">
-      <h2 className="text-[8vw] text-white flex justify-center font-semibold">
+      <h2 className="text-[8vw] text-white flex justify-center font-semibold text-slide-up">
         SKILLS
       </h2>
       <div className="p-8 flex flex-col space-y-8 items-center justify-center text-white">

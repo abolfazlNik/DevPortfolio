@@ -23,7 +23,6 @@ const Experience = () => {
           end: "bottom top",
           scrub: true,
           pin: true,
-          markers: true,
           onEnter: () => {
             gsap.to(text, {
               color: "#fff",
@@ -46,7 +45,10 @@ const Experience = () => {
         className="panel z-[5] w-full h-full min-h-screen bg-custom-white flex items-center justify-center"
         ref={sectionRef}
       >
-        <h2 className="z-10 text-[8vw] text-black text-center" ref={textRef}>
+        <h2
+          className="z-10 text-[8vw] text-black text-center text-slide-up"
+          ref={textRef}
+        >
           EXPERIENCE
         </h2>
       </div>
