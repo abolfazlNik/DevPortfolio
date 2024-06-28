@@ -16,7 +16,7 @@ const ExperienceDetails: FC<IDetails> = ({
   useEffect(() => {
     if (lineRef.current) {
       const startX = 0
-      const endX = window.innerWidth - 200
+      const endX = window.innerWidth - 100
       gsap.fromTo(
         lineRef.current,
         { x: startX },
@@ -38,7 +38,7 @@ const ExperienceDetails: FC<IDetails> = ({
 
   return (
     <>
-      <div className="grid grid-cols-[250px_1fr] items-baseline gap-36">
+      <div className="grid lg:grid-cols-[250px_1fr] grid-cols-1 items-baseline lg:gap-36 gap-10">
         <div className="text-2xl font-medium text-custom-gray-light">
           {date}
         </div>

@@ -24,8 +24,11 @@ const About = () => {
   }, [])
 
   return (
-    <div className="h-screen bg-custom-black flex relative items-center justify-center">
-      <div ref={textRef} className="custom-container about-title">
+    <div className="h-svh bg-custom-black flex relative items-center justify-center">
+      <div
+        ref={textRef}
+        className="custom-container about-title lg:text-[3.5vw] sm:text-[5vw] text-[7.5vw]"
+      >
         {words.map((word, index) => (
           <span className="pr-4" key={index}>
             {word}

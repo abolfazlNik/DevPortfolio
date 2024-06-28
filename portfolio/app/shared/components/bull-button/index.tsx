@@ -59,12 +59,12 @@ function BallButton() {
 
   return (
     <div
-      className="w-[5rem] h-[5rem] rounded-full z-20 bg-white mix-blend-difference backdrop-blur-xl text-black cursor-pointer flex justify-center items-center fixed bottom-10 right-5"
+      className="lg:w-[5rem] w-[4rem] lg:h-[5rem] h-[4rem] rounded-full z-20 bg-white mix-blend-difference backdrop-blur-xl text-black cursor-pointer flex justify-center items-center fixed bottom-10 right-5"
       onMouseMove={activateMagneto}
       onMouseLeave={resetMagneto}
       onClick={scrollToTop}
     >
-      <span className="text text-xl">Top</span>
+      <span className="text lg:text-xl text-base">Top</span>
     </div>
   )
 }

@@ -9,8 +9,6 @@ const Experience = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
   const textRef = useRef<HTMLHeadingElement>(null)
 
-  // const lastItem = experienceData.slice(-1)
-
   useEffect(() => {
     const section = sectionRef.current
     const text = textRef.current
@@ -25,6 +23,7 @@ const Experience = () => {
           end: "bottom top",
           scrub: true,
           pin: true,
+          markers: true,
           onEnter: () => {
             gsap.to(text, {
               color: "#fff",
@@ -42,39 +41,31 @@ const Experience = () => {
     }
   }, [])
   return (
-    <div className="h-full my-20 w-full relative bg-custom-black text-white">
-      {/* <div className="z-[5] experience-section w-full sticky top-0">
-        <h2 className="z-10 text-[8vw] text-white text-center sticky pt-8">
+    <>
+      <div
+        className="panel z-[5] w-full h-full min-h-screen bg-custom-white flex items-center justify-center"
+        ref={sectionRef}
+      >
+        <h2 className="z-10 text-[8vw] text-black text-center" ref={textRef}>
           EXPERIENCE
         </h2>
-      </div> */}
-      <div className="h-full overflow-hidden ">
-        <div
-          className="panel z-[5] w-full h-screen bg-custom-white flex items-center justify-center"
-          ref={sectionRef}
-        >
-          <h2
-            className="z-10 text-[8vw] text-black text-center sticky top-0 pt-8"
-            ref={textRef}
-          >
-            EXPERIENCE
-          </h2>
+      </div>
+      <div className="flex flex-col w-full my-20 bg-custom-black text-white">
+        <div className="lg:gap-28 gap-12 flex flex-col mt-20 h-full custom-container">
+          {experienceData.map((item) => (
+            <ExperienceDetails
+              key={item.id}
+              date={item.date}
+              compony={item.company}
+              headline={item.headline}
+              colorCompony={item.colorCompony}
+              details={item.details}
+              id={item.id}
+            />
+          ))}
         </div>
       </div>
-      <div className="gap-28 flex flex-col mt-20 h-full custom-container">
-        {experienceData.map((item) => (
-          <ExperienceDetails
-            key={item.id}
-            date={item.date}
-            compony={item.company}
-            headline={item.headline}
-            colorCompony={item.colorCompony}
-            details={item.details}
-            id={item.id}
-          />
-        ))}
-      </div>
-    </div>
+    </>
   )
 }
 
