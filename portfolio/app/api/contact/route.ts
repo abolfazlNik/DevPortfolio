@@ -1,3 +1,4 @@
+import { messageSchema } from "@/app/shared/types"
 import { Telegraf } from "telegraf"
 import { z } from "zod"
 
@@ -5,12 +6,6 @@ const BOT_TOKEN = process.env.BOT_TOKEN as string
 const CHAT_ID = process.env.BOT_CHAT_ID as string
 
 const bot = new Telegraf(BOT_TOKEN)
-
-const messageSchema = z.object({
-  fullName: z.string().min(1, "Full name is required"),
-  email: z.string().email("Invalid email address"),
-  message: z.string().min(1, "Message is required"),
-})
 
 async function POST(req: Request) {
   const data = await req.json()
@@ -30,7 +25,5 @@ async function POST(req: Request) {
   }
   return Response.json({})
 }
-
-console.log("POST" , POST)
 
 export { POST }
