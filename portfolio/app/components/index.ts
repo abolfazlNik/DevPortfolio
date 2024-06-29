@@ -1,15 +1,7 @@
 import Skills from "@/app/components/skills"
-import About from "@/app/components/About"
+import About from "@/app/components/about"
 import Experience from "@/app/components/experience"
-import MarqueeScroll from "@/app/components/MarqueeScroll"
-import DynamicScrollTriggerComponent from "@/app/components/DynamicScrollTriggerComponent"
-import ProjectsScrollSection from "@/app/components/ProjectsScrollSection"
+import MarqueeScroll from "@/app/components/marquee-scroll"
+import ProjectsScrollSection from "@/app/components/projects-scroll-section"
 
-export {
-  Skills,
-  About,
-  Experience,
-  MarqueeScroll,
-  DynamicScrollTriggerComponent,
-  ProjectsScrollSection,
-}
+export { Skills, About, Experience, MarqueeScroll, ProjectsScrollSection }

@@ -2,10 +2,14 @@
 import { useRef } from "react"
 import Image from "next/image"
 import { nikName } from "@/public/images"
-import { BallButton, Header } from "./shared/components"
+import {
+  BallButton,
+  Header,
+  DynamicScrollTrigger,
+  Modal,
+} from "./shared/components"
 import {
   About,
-  DynamicScrollTriggerComponent,
   Experience,
   MarqueeScroll,
   ProjectsScrollSection,
@@ -13,8 +17,7 @@ import {
 } from "./components"
 import SmoothScroll from "./shared/utils/smooth-scroll"
 import TextAnimationSlideUp from "./shared/utils/text-animation-slide-up"
-import Form from "./components/contact"
-import Modal from "./shared/components/modal"
+import Form from "./components/form"
 import { Toaster } from "react-hot-toast"
 
 export default function Home() {
@@ -22,6 +25,7 @@ export default function Home() {
   const projectRef = useRef(null)
   SmoothScroll()
   TextAnimationSlideUp()
+  
   return (
     <>
       <div>
@@ -42,7 +46,7 @@ export default function Home() {
         <Form />
       </Modal>
 
-      <DynamicScrollTriggerComponent
+      <DynamicScrollTrigger
         elements={[
           <div
             key={"about"}
@@ -58,7 +62,7 @@ export default function Home() {
         ]}
       />
       <About />
-      <DynamicScrollTriggerComponent
+      <DynamicScrollTrigger
         elements={[
           <div
             key={"projects"}

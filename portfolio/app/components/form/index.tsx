@@ -12,7 +12,6 @@ const Form = () => {
     register,
     handleSubmit,
     formState: { errors },
-    setError,
     reset,
   } = useForm<formData>({ resolver: zodResolver(messageSchema) })
   const { toggleModal } = useModalState()
