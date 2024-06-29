@@ -1,4 +1,8 @@
-import Lenis from "@studio-freight/lenis"
+import Lenis, { LenisOptions } from "@studio-freight/lenis"
+
+interface CustomLenisOptions extends LenisOptions {
+  direction: "vertical" | "horizontal"
+}
 
 const SmoothScroll = () => {
   const lenis = new Lenis({
@@ -11,7 +15,7 @@ const SmoothScroll = () => {
     smoothTouch: false,
     touchMultiplier: 2,
     infinite: false,
-  })
+  } as CustomLenisOptions)
 
   function raf(time: number) {
     lenis.raf(time)

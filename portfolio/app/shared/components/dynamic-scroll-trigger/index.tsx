@@ -1,11 +1,7 @@
 import React, { ReactNode, useEffect, useRef } from "react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-const DynamicScrollTriggerComponent = ({
-  elements,
-}: {
-  elements: ReactNode[]
-}) => {
+const DynamicScrollTrigger = ({ elements }: { elements: ReactNode[] }) => {
   const containerRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
@@ -28,7 +24,14 @@ const DynamicScrollTriggerComponent = ({
   return (
     <div>
       {elements.map((element, index) => (
-        <div key={index} ref={(el) => (containerRefs.current[index] = el)}>
+        <div
+          key={index}
+          ref={(el) => {
+            if (el) {
+              containerRefs.current[index] = el
+            }
+          }}
+        >
           {element}
         </div>
       ))}
@@ -36,4 +39,4 @@ const DynamicScrollTriggerComponent = ({
   )
 }
 
-export default DynamicScrollTriggerComponent
+export default DynamicScrollTrigger

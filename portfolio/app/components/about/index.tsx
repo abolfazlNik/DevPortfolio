@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect } from "react"
 import { gsap } from "gsap"
 import SplitType from "split-type"
@@ -25,7 +26,8 @@ const About = () => {
       <div className="custom-container about-title lg:text-[4vw] sm:text-[5vw] text-[7.5vw] text-custom-white">
         Creative Front-end Developer I have more than <br /> 5 years of
         experience using JavaScript and CSS <br /> to create responsive and
-        adaptive websites.<br /> Having experience in ReactJS and NextJs.
+        adaptive websites.
+        <br /> Having experience in ReactJS and NextJs.
       </div>
     </div>
   )
