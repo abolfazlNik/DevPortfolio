@@ -14,6 +14,8 @@ import {
 import SmoothScroll from "./shared/utils/smooth-scroll"
 import TextAnimationSlideUp from "./shared/utils/text-animation-slide-up"
 import Form from "./components/contact"
+import Modal from "./shared/components/modal"
+import { Toaster } from "react-hot-toast"
 
 export default function Home() {
   const aboutRef = useRef(null)
@@ -22,6 +24,10 @@ export default function Home() {
   TextAnimationSlideUp()
   return (
     <>
+      <div>
+        <Toaster position="top-right" reverseOrder={false} />
+      </div>
+
       <div className="h-svh">
         <Header />
         <div className="lg:mx-[70px] mx-[22px] lg:h-[85%] h-full flex items-center justify-center">
@@ -32,8 +38,9 @@ export default function Home() {
           />
         </div>
       </div>
-
-      {/* <Form /> */}
+      <Modal title="CONTACT ME">
+        <Form />
+      </Modal>
 
       <DynamicScrollTriggerComponent
         elements={[
