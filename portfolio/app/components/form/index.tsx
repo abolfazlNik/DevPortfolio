@@ -1,3 +1,4 @@
+"use client"
 import { formData, messageSchema } from "@/app/shared/types"
 import React from "react"
 import { useForm } from "react-hook-form"

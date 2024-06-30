@@ -1,45 +1,37 @@
-import React from "react"
+import React, { FC } from "react"
 import Marquee from "react-fast-marquee"
 import Image from "next/image"
-import { bolt, boltFill, dev, front } from "@/public/images"
+import { ImageData } from "@/app/shared/types"
+import marqueeData from "@/data/marqueeData.json"
 
-const images = [
-  { src: dev, alt: "dev", width: 250, height: 140 },
-  { src: bolt, alt: "bolt", width: 50, height: 50, icon: true },
-  { src: front, alt: "front", width: 250, height: 140 },
-  { src: boltFill, alt: "boltFill", width: 50, height: 50, icon: true },
-]
+const ImageItem: FC<ImageData> = ({ src, alt, width, height, icon }) => (
+  <div className={`lg:mx-16 mx-8 ${!icon && "lg:w-[450px] w-[250px]"}`}>
+    <Image
+      src={src}
+      alt={alt}
+      layout="responsive"
+      width={width}
+      height={height}
+    />
+  </div>
+)
 
-const MarqueeScroll = () => {
-  const renderImages = () => (
-    <div className="flex items-center">
-      {images.map((image, index) => (
-        <div
-          key={index}
-          className={`lg:mx-16 mx-8 ${!image.icon && "lg:w-[450px] w-[250px]"}`}
-        >
-          <Image
-            src={image.src}
-            alt={image.alt}
-            layout="responsive"
-            width={image.width}
-            height={image.height}
-          />
-        </div>
-      ))}
-    </div>
-  )
+const MarqueeImages = () => (
+  <div className="flex items-center sm:h-20">
+    {marqueeData.map((image, index) => (
+      <ImageItem key={index} {...image} />
+    ))}
+  </div>
+)
 
-  return (
-    <div className="h-svh flex items-center justify-center flex-col gap-16">
-      <Marquee autoFill speed={200} direction="right">
-        {renderImages()}
-      </Marquee>
-      <Marquee autoFill speed={200} direction="left">
-        {renderImages()}
-      </Marquee>
-    </div>
-  )
-}
-
+const MarqueeScroll = () => (
+  <div className="h-svh flex items-center justify-center flex-col md:gap-16 gap-2">
+    <Marquee autoFill speed={200} direction="right">
+      <MarqueeImages />
+    </Marquee>
+    <Marquee autoFill speed={200} direction="left">
+      <MarqueeImages />
+    </Marquee>
+  </div>
+)
 export default MarqueeScroll

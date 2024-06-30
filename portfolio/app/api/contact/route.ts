@@ -1,4 +1,5 @@
 import { messageSchema } from "@/app/shared/types"
+import toast from "react-hot-toast"
 import { Telegraf } from "telegraf"
 import { z } from "zod"
 
@@ -9,7 +10,6 @@ const bot = new Telegraf(BOT_TOKEN)
 
 async function POST(req: Request) {
   const data = await req.json()
-
   try {
     const { fullName, email, message } = messageSchema.parse(data)
 

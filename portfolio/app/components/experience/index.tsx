@@ -47,7 +47,7 @@ const Experience = () => {
         ref={sectionRef}
       >
         <h2
-          className="z-10 text-[8vw] text-black text-center text-slide-up"
+          className="z-10 md:text-[8vw] text-[10vw] text-black text-center text-slide-up"
           ref={textRef}
         >
           EXPERIENCE
