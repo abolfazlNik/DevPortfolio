@@ -1,3 +1,4 @@
+"use client"
 import { useModalState } from "@/app/store/modal"
 import React, { ReactNode } from "react"
 

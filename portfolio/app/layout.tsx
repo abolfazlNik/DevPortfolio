@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import Footer from "./shared/components/footer"
+import { Toaster } from "react-hot-toast"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-custom-black">
+        <Toaster position="top-right" reverseOrder={false} />
         <main>{children}</main>
         <Footer />
       </body>

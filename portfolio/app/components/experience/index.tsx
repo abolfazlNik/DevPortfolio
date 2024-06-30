@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef } from "react"
 import ExperienceDetails from "./components/experience-detail"
 import experienceData from "@/data/experience.json"
