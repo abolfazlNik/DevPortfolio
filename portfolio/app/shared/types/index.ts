@@ -1,5 +1,14 @@
+import { StaticImageData } from "next/image"
 import { FieldError, UseFormRegister } from "react-hook-form"
 import { ZodType, z } from "zod"
+
+export interface ImageData {
+  src: StaticImageData | string
+  alt: string
+  width: number
+  height: number
+  icon?: boolean
+}
 
 export interface IDetails {
   date: string

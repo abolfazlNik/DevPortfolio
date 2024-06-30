@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { nikName } from "@/public/images"
-import { BallButton, Header, Modal } from "./shared/components"
+import { BallButton, Header } from "./shared/components"
 import {
   About,
   Experience,
@@ -8,12 +8,12 @@ import {
   ProjectsScrollSection,
   Skills,
 } from "./components"
-import Form from "./components/form"
 import GlobalInitializer from "./shared/components/global-initializer"
+import Footer from "./shared/components/footer"
 
 export default function Home() {
   return (
-    <>
+    <div>
       <GlobalInitializer />
       <div className="h-svh">
         <Header />
@@ -26,16 +26,13 @@ export default function Home() {
         </div>
       </div>
 
-      <Modal title="CONTACT ME">
-        <Form />
-      </Modal>
-
       <About />
       <ProjectsScrollSection />
       <MarqueeScroll />
       <Skills />
       <Experience />
       <BallButton />
-    </>
+      <Footer />
+    </div>
   )
 }

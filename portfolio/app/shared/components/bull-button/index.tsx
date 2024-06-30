@@ -1,10 +1,27 @@
 "use client"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { gsap, Power4, Elastic } from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 gsap.registerPlugin(ScrollToPlugin)
 
 function BallButton() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      if (scrollY > 300) {
+        setIsVisible(true)
+      } else {
+        setIsVisible(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
   const activateMagneto = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
@@ -58,14 +75,18 @@ function BallButton() {
   }
 
   return (
-    <div
-      className="lg:w-[5rem] w-[4rem] lg:h-[5rem] h-[4rem] rounded-full z-20 bg-white mix-blend-difference backdrop-blur-xl text-black cursor-pointer flex justify-center items-center fixed bottom-10 right-5"
-      onMouseMove={activateMagneto}
-      onMouseLeave={resetMagneto}
-      onClick={scrollToTop}
-    >
-      <span className="text lg:text-xl text-base">Top</span>
-    </div>
+    <>
+      {isVisible && (
+        <div
+          className="lg:w-[5rem] ball-button w-[4rem] lg:h-[5rem] h-[4rem] rounded-full z-20 bg-white mix-blend-difference backdrop-blur-xl text-black cursor-pointer flex justify-center items-center fixed bottom-10 right-5"
+          onMouseMove={activateMagneto}
+          onMouseLeave={resetMagneto}
+          onClick={scrollToTop}
+        >
+          <span className="text lg:text-xl text-base">Top</span>
+        </div>
+      )}
+    </>
   )
 }
 

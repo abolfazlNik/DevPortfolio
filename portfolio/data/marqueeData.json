@@ -1,0 +1,52 @@
+[
+  {
+    "src": "/images/bolt-outline.svg",
+    "alt": "bolt",
+    "width": 50,
+    "height": 50,
+    "icon": true
+  },
+  { "src": "/images/front.webp", "alt": "front", "width": 250, "height": 140 },
+  {
+    "src": "/images/bolt.svg",
+    "alt": "bolt",
+    "width": 50,
+    "height": 50,
+    "icon": true
+  },
+  { "src": "/images/dev.webp", "alt": "dev", "width": 250, "height": 140 },
+  {
+    "src": "/images/bolt-outline.svg",
+    "alt": "bolt",
+    "width": 50,
+    "height": 50,
+    "icon": true
+  },
+  {
+    "src": "/images/creative.webp",
+    "alt": "creative",
+    "width": 250,
+    "height": 140
+  },
+  {
+    "src": "/images/bolt.svg",
+    "alt": "bolt",
+    "width": 50,
+    "height": 50,
+    "icon": true
+  },
+  { "src": "/images/front.webp", "alt": "front", "width": 250, "height": 140 },
+  {
+    "src": "/images/bolt-outline.svg",
+    "alt": "bolt",
+    "width": 50,
+    "height": 50,
+    "icon": true
+  },
+  {
+    "src": "/images/creative-outline.webp",
+    "alt": "creative",
+    "width": 250,
+    "height": 140
+  }
+]

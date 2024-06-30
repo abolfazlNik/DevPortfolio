@@ -54,7 +54,7 @@ const ProjectsScrollSection = () => {
         <div className="custom-container flex justify-between h-full lg:flex-row flex-col">
           <div
             ref={numberRef}
-            className="flex text-white lg:text-[18vw] text-[24vw] lg:w-[25%] w-full items-center h-svh justify-center lg:justify-end sticky mt-5 top-7"
+            className="flex text-white lg:text-[18vw] md:text-[15vw] text-[24vw] lg:w-[25%] w-full items-center h-svh justify-center lg:justify-end sticky mt-5 top-7"
           >
             01.
           </div>

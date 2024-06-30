@@ -1,12 +1,17 @@
 [
   {
     "title": "digi dentall",
-    "description": "........",
-    "image": "/images/project-1.png"
+    "description": "digidentall website",
+    "image": "/images/digidentall.webp"
+  },
+  {
+    "title": "foodbell",
+    "description": "foodbell website",
+    "image": "/images/foodbell.webp"
   },
   {
     "title": "shades ai",
-    "description": "...",
-    "image": "/images/project-1.png"
+    "description": "shades ai plugin",
+    "image": "/images/plugin-cover.webp"
   }
 ]
