@@ -6,7 +6,7 @@ import Link from "next/link"
 const ProjectSection = () => {
   return (
     <div className="lg:w-[70%] w-full">
-      {projects.map(({ title, description, image }, index) => {
+      {projects.map(({ title, images }, index) => {
         let rotationClass = "rotate-0"
         if (index % 3 === 1) {
           rotationClass = "-rotate-3"
@@ -21,10 +21,11 @@ const ProjectSection = () => {
                 className={`bg-custom-gray-dark w-full backdrop-blur-xl rounded-2xl bg-opacity-30 lg:p-6 p-3 ${rotationClass}`}
               >
                 <Image
-                  width={500}
-                  height={300}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
                   className="rounded-lg overflow-hidden w-full h-full lg:min-h-full md:min-h-[250px] object-cover"
-                  src={image}
+                  src={images[0]}
                   alt="project image"
                 />
               </div>

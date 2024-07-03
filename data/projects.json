@@ -1,17 +1,69 @@
 [
   {
-    "title": "digi dentall",
-    "description": "digidentall website",
-    "image": "/images/digidentall.webp"
+    "title": "Foodbell",
+    "work_environment": "Remote",
+    "project_details": {
+      "platform": "Foodbell is an online platform for food ordering, built using JavaScript and Next.js. The platform is designed to handle high volumes of customers, with a strong focus on performance to ensure a seamless ordering experience.",
+      "role": "As a front-end developer, my role was to enhance the UI/UX, improve performance, and implement new features.",
+      "challenges": [
+        "The primary challenge was to create a highly performant and user-friendly platform that could handle a large number of concurrent users. The platform also needed to support customizable themes for different restaurants, ensure responsiveness across devices, and provide individual landing pages for each restaurant with unique routing."
+      ],
+      "goals": [
+        "Goals",
+        "Enhance the overall performance of the website to handle high traffic efficiently.\nImprove the user interface and user experience to make the ordering process smooth and intuitive.\nImplement customizable themes for each restaurant.\nEnsure the website is fully responsive across various devices.\nDevelop a structure to support unique landing pages for each restaurant."
+      ],
+      "result": [
+        "Result",
+        "Performance: Achieved significant performance improvements, reducing page load times and ensuring smooth navigation even under high traffic conditions.\nUI/UX: The enhanced UI/UX received positive feedback from users, making the ordering process more enjoyable and intuitive.\nCustomization: Successfully implemented theme customization, allowing each restaurant to have a unique look and feel.\nResponsiveness: Ensured the platform was fully responsive, providing a consistent experience across desktops, tablets, and mobile devices.\nRouting and Structure: Developed a robust routing and folder structure that supports unique landing pages for each restaurant, enhancing the overall user experience."
+      ]
+    },
+    "images": ["/images/total-foodbell-images.png"]
   },
   {
-    "title": "foodbell",
-    "description": "foodbell website",
-    "image": "/images/foodbell.webp"
+    "title": "Zown",
+    "work_environment": "Remote",
+    "project_details": {
+      "platform": "Zown Website is a real estate platform designed to facilitate the process of buying homes. Utilizing modern web technologies, the project aimed to create a fast, efficient, and user-friendly website and application.",
+      "role": "As a key developer, I worked extensively with JavaScript, React, React Native, and TypeScript to build the platform. during which I was actively involved in coding, optimizing performance, and integrating various functionalities.",
+      "challenges": [
+        "The primary challenge was to develop a high-performance real estate platform that could handle complex functionalities such as various charts and interactive maps. Additionally, ensuring the website's speed and responsiveness was crucial for providing a seamless user experience."
+      ],
+      "goals": [
+        "Goals",
+        "Develop a user-friendly website and mobile application with advanced functionalities.\nEnsure the platform is fast and responsive to enhance user satisfaction.\nProvide features that allow customers to easily search for and buy homes.\nImplement robust performance improvements and handle high traffic efficiently."
+      ],
+      "result": [
+        "Result",
+        "The project successfully culminated in a high-performance, user-friendly real estate website and mobile application.\nThe platform's intuitive interface and advanced features enabled customers to easily search for and purchase homes, significantly enhancing their experience.\nThe project’s success was reflected in positive user feedback and increased engagement on the platform."
+      ]
+    },
+    "images": [
+      "/images/zown-1.png",
+      "/images/total-zown-images.png",
+      "/images/total-zown-mobile-images.png"
+    ]
   },
   {
-    "title": "shades ai",
-    "description": "shades ai plugin",
-    "image": "/images/plugin-cover.webp"
+    "title": "Digidentall",
+    "work_environment": "Project",
+    "project_details": {
+      "platform": "Digidental is an online platform designed to facilitate the purchase of dental equipment for dentists. The project involved creating an efficient and fully responsive website that works seamlessly across all mobile devices. The website was developed using TypeScript, React, and Next.js.",
+      "role": "As a front-end developer, I was responsible for designing and implementing the user interface. I collaborated closely with the back-end team to ensure a cohesive and functional final product. ",
+      "challenges": [
+        "The existing Digidental website was outdated and lacked a user-friendly interface. The main issues included slow performance, poor design, and a lack of responsiveness on mobile devices. These problems led to a decrease in user satisfaction and engagement."
+      ],
+      "goals": [
+        "Goals",
+        "Redesign the website to enhance user experience and improve visual appeal.\nEnsure the website is fully responsive and performs well on all devices.\nIntegrate complex forms and user profiles tailored for both dentists and regular users.\nImplement features such as a digital wallet, interactive maps, and a robust shopping cart.\nMaintain effective communication and collaboration with the back-end team throughout the project."
+      ],
+      "result": [
+        "Result",
+        "The revamped Digidental website received positive feedback from both the management and users.\nSignificant improvement in user experience and visual design.\nEnhanced website performance and responsiveness across all devices.\nSuccessful integration of complex features such as user profiles, digital wallet, maps, and shopping cart.\nIncreased user engagement and satisfaction."
+      ]
+    },
+    "images": [
+      "/images/total-digidentall-images.png",
+      "/images/total-digidentall-mobile-images.png"
+    ]
   }
 ]
