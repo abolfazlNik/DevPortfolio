@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import { Toaster } from "react-hot-toast"
-import { Modal } from "./shared/components"
+import { Header, Modal } from "./shared/components"
 
 export const metadata: Metadata = {
   title: "NIK",
@@ -16,7 +16,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-custom-black relative">
+      <body className="relative">
+        <Header />
         <Modal title="CONTACT ME" />
         <Toaster position="top-right" reverseOrder={false} />
         <main>{children}</main>

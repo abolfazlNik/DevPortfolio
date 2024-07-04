@@ -1,6 +1,5 @@
-import { Header } from "@/app/shared/components"
 import projects from "@/data/projects.json"
-import Image from "next/image"
+import { ListDetails, ProjectHeader, ProjectImages } from "./components"
 
 const Project = ({
   params: { title },
@@ -12,22 +11,31 @@ const Project = ({
   const normalizedTitle = title.replaceAll("-", " ")
   const project = projects.find((p) => p.title == normalizedTitle)
   if (!project) {
-    // redirect
+    return <>NOT FOUND</>
   }
   return (
-    <div>
-      <Header />
-      <div className="text-white flex-col flex items-center custom-container sm:space-y-20 space-y-10 sm:h-screen h-svh sm:my-20 my-10">
-        <h1 className="sm:text-8xl text-6xl text-white">{project?.title}</h1>
-        {/* <p className="leading-[2.5] text-2xl break-words text-white">
-        {project?.description}
-      </p> */}
-        <Image
-          src={project?.image || ""}
-          alt={project?.title || ""}
-          width={950}
-          height={950}
+    <div className="bg-custom-white text-custom-black h-full">
+      <div className="flex-col flex items-start sm:space-y-20 custom-container space-y-10 sm:my-20 my-10">
+        <ProjectHeader
+          title={project?.title}
+          workEnvironment={project?.work_environment}
         />
+        <div className="sm:text-3xl text-2xl space-y-4 font-thin">
+          <p className="leading-10">{project?.project_details?.platform}</p>
+          <p className="leading-10">{project?.project_details?.role}</p>
+        </div>
+        <ProjectImages images={project.images} index={0} />
+        <p className="leading-10 sm:text-2xl text-xl font-thin">
+          {project?.project_details?.challenges}
+        </p>
+        {project.images.length >= 2 && (
+          <ProjectImages images={project.images} index={1} />
+        )}
+        <ListDetails content={project.project_details.goals} />
+        {project.images.length >= 3 && (
+          <ProjectImages images={project.images} index={2} />
+        )}
+        <ListDetails content={project.project_details.result} />
       </div>
     </div>
   )

@@ -7,7 +7,7 @@ import Link from "next/link"
 const Header = () => {
   const { toggleModal } = useModalState()
   return (
-    <header className="lg:h-24 h-20 bg-custom-black bg-opacity-80 backdrop-blur-3xl sticky top-0 w-full left-0 ring-0">
+    <header className="lg:h-24 h-20 lg:max-h-[6rem] bg-custom-black bg-opacity-95 backdrop-blur-3xl sticky top-0 w-full left-0 right-0">
       <div className="custom-container flex justify-between items-center h-full">
         <Link href="/">
           <Image className="lg:w-[40px] w-[34px]" src={logo} alt="logo" />
