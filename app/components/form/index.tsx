@@ -35,21 +35,21 @@ const Form = () => {
           type="text"
           name="fullName"
           placeholder="Full Name"
-          register={register}
+          register={register as any}
           error={errors.fullName}
         />
         <FormField
           type="email"
           name="email"
           placeholder="Email Address"
-          register={register}
+          register={register as any}
           error={errors.email}
         />
         <FormField
           type="textarea"
           name="message"
           placeholder="Message"
-          register={register}
+          register={register as any}
           error={errors.message}
         />
         <button

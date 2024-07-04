@@ -43,7 +43,7 @@ const About = () => {
 
       <div className="h-svh bg-custom-black flex relative items-center justify-center">
         <p className="custom-container about-title text-center font-light lg:text-[4vw] sm:text-[5vw] text-[7.5vw] text-custom-white">
-          Hi! I'm <strong className="font-semibold text-white">Abolfazl</strong>{" "}
+          Hi! I am <strong className="font-semibold text-white">Abolfazl</strong>{" "}
           a frontend developer with{" "}
           <strong className="font-semibold text-white">5 years of</strong>
           <br />
