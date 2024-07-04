@@ -20,7 +20,7 @@ const FormField: FC<FormFieldProps> = ({
             error && "!border-red-500 !border"
           }`}
           placeholder={placeholder}
-          {...register(name)}
+          {...register(name as any)}
         />
       ) : (
         <input
@@ -29,7 +29,7 @@ const FormField: FC<FormFieldProps> = ({
           }`}
           type={type}
           placeholder={placeholder}
-          {...register(name)}
+          {...register(name as any)}
         />
       )}
       {error && <span className="text-red-400 text-sm">{error.message}</span>}
