@@ -1,7 +1,5 @@
 import { messageSchema } from "@/app/shared/types"
-import toast from "react-hot-toast"
 import { Telegraf } from "telegraf"
-import { z } from "zod"
 
 const BOT_TOKEN = process.env.BOT_TOKEN as string
 const CHAT_ID = process.env.BOT_CHAT_ID as string

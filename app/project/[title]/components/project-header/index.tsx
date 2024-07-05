@@ -9,7 +9,7 @@ const ProjectHeader = ({
 }) => {
   return (
     <div className="w-full flex justify-between items-center">
-      <h1 className="sm:text-[8vw] text-6xl font-semibold">{title}</h1>
+      <h1 className="sm:text-[8vw] text-3xl font-semibold">{title}</h1>
       <span className="sm:text-2xl text-xl font-light">{workEnvironment}</span>
     </div>
   )
