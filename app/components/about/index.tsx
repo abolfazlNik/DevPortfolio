@@ -18,8 +18,9 @@ const About = () => {
         end: "top 30%",
         scrub: true,
       },
+      duration: 0.5,
       opacity: 0.2,
-      stagger: 0.1,
+      stagger: 0.5,
     })
   }, [])
 
@@ -42,24 +43,15 @@ const About = () => {
       />
 
       <div className="h-svh bg-custom-black flex relative items-center justify-center">
-        <p className="custom-container about-title text-center font-light lg:text-[4vw] sm:text-[5vw] text-[7.5vw] text-custom-white">
-          Hi! I am <strong className="font-semibold text-white">Abolfazl</strong>{" "}
-          a frontend developer with{" "}
-          <strong className="font-semibold text-white">5 years of</strong>
-          <br />
-          <strong className="font-semibold text-white">
-            expertise in{" "}
-          </strong>{" "}
-          Next.js, React, JavaScript , TypeScript I excel in{" "}
-          <strong className="font-semibold text-white">
-            crafting intuitive
-          </strong>
-          , visually appealing applications
-          <br /> My focus is on{" "}
-          <strong className="font-semibold text-white">
-            delivering high-quality{" "}
-          </strong>
-          , user-centric <br /> solutions with creative and precise styling.
+        <p className="custom-container about-title text-center font-thin lg:text-[4vw] sm:text-[5vw] text-[7.5vw] text-custom-white inline-div">
+          Hi I'm <strong>Abolf</strong>azl! a <strong>fro</strong>ntend
+          developer and <strong>JavaS</strong>cript enthusiast with a bachelor's{" "}
+          <strong>degre</strong>e and over <strong>4 yea</strong>rs of
+          <strong>expe</strong>rience. I've <strong>succes</strong>sfully
+          delivered <strong>hig</strong>h-quality user <strong>int</strong>
+          erface <strong>soluti</strong>ons for <strong>star</strong>tups and{" "}
+          <strong>enterp</strong>rise companies, <strong>gain</strong>ing
+          valuable <strong>experie</strong>nce along the way.
         </p>
       </div>
     </>

@@ -1,7 +1,9 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import { Toaster } from "react-hot-toast"
-import { Header, Modal } from "./shared/components"
+import { Modal } from "./shared/components"
+import { Analytics } from "@vercel/analytics/react"
+import Footer from "./shared/components/footer"
 
 export const metadata: Metadata = {
   title: "NIK",
@@ -14,13 +16,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+
   return (
     <html lang="en">
       <body className="relative">
-        <Header />
         <Modal title="CONTACT ME" />
         <Toaster position="top-right" reverseOrder={false} />
         <main>{children}</main>
+        <Footer />
+        <Analytics />
       </body>
     </html>
   )
