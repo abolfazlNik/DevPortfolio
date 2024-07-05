@@ -17,6 +17,7 @@ export interface IDetails {
   details: string
   colorCompony: string
   id: number
+  url: string | undefined
 }
 
 export interface IRenderSkills {

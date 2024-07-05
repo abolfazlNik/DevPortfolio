@@ -2,6 +2,7 @@ import React, { FC, useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { IDetails } from "@/app/shared/types"
 import experienceData from "@/data/experience.json"
+import Link from "next/link"
 
 const ExperienceDetails: FC<IDetails> = ({
   date,
@@ -10,6 +11,7 @@ const ExperienceDetails: FC<IDetails> = ({
   compony,
   colorCompony,
   id,
+  url,
 }) => {
   const lineRef = useRef<HTMLDivElement | null>(null)
 
@@ -44,15 +46,17 @@ const ExperienceDetails: FC<IDetails> = ({
         </div>
         <div className="flex-col flex">
           <h3 className="mb-3 text-3xl text-custom-white">{headline}</h3>
-          <h4
-            style={{
-              background: `linear-gradient(to right, ${colorCompony} , #9EA2A4 40px)`,
-              backgroundClip: "text",
-            }}
-            className={`mt-3 mb-6 text-xl to-50% text-transparent w-fit`}
-          >
-            {compony}
-          </h4>
+          <Link href={`${url}`}>
+            <h4
+              style={{
+                background: `linear-gradient(to right, ${colorCompony} , #9EA2A4 40px)`,
+                backgroundClip: "text",
+              }}
+              className={`mt-3 mb-6 text-xl to-50% text-transparent w-fit`}
+            >
+              {compony}
+            </h4>
+          </Link>
           <div className="text-white text-xl leading-9 w-[85%] font-light">
             {details}
           </div>

@@ -1,34 +1,38 @@
 [
   {
     "id": 1,
+    "link": "https://foodbell.co.uk/",
     "date": "Mar 2024 - now",
     "headline": "Front-End Developer",
     "company": "Foodbell",
-    "details": "Development and implementation of an advanced store platform. Designing new features and modifying the project structure for better performance to customers. Improved user interface and display on all devices. Responsible for fixing bugs and designing new features, improving SEO.",
+    "details": "Foodbell is a platform designed for food ordering, featuring real-time order tracking and management capabilities. Foodbell Manage your own website with 0% Commission , stands out from competitors with its. Developed using advanced technologies such as Next.js, React, Zustand",
     "colorCompony": "#F46A16"
   },
   {
     "id": 2,
+    "link": "https://www.zown.ca/",
     "date": "Aug 2022 - May 2024",
     "headline": "Front-End Developer",
     "company": "Zown",
-    "details": "Development and implementation of an advanced store platform. Designing new features and modifying the project structure for better performance to customers. Improved user interface and display on all devices. Responsible for fixing bugs and designing new features, improving SEO.",
+    "details": "Zown is a startup in the real estate sector, focusing on house and property sales. With a cohesive and dynamic team, we're dedicated to developing and enhancing a website and application to boost sales. Leveraging advanced technologies including React, Next.js, TypeScript, and React Native, we aim to provide a modern and efficient platform.",
     "colorCompony": "#FECE05"
   },
   {
     "id": 3,
+    "link": "",
     "date": "Feb 2023 - Dec 2023",
     "headline": "Front-End Developer",
-    "company": "Digi Dentall",
-    "details": "Development and implementation of an advanced store platform. Designing new features and modifying the project structure for better performance to customers. Improved user interface and display on all devices. Responsible for fixing bugs and designing new features, improving SEO.",
+    "company": "Digidentall",
+    "details": "Digidentall specializes in the sale of dental equipment, offering a high-performance website with an attractive and efficient design. Developed using React, Next.js, and TypeScript, Digidentall ensures a modern and robust platform for its customers.",
     "colorCompony": "#005BEA"
   },
   {
     "id": 4,
+    "link": "https://www.viraprocess.com/",
     "date": "Sep 2019 - Feb 2022",
     "headline": "Front-End Developer",
     "company": "Vira Process",
-    "details": "Development and implementation of an advanced store platform. Designing new features and modifying the project structure for better performance to customers. Improved user interface and display on all devices. Responsible for fixing bugs and designing new features, improving SEO.",
+    "details": "Vira Process specializes in developing e-commerce websites, aimed at increasing customer reach and creating a fast and efficient platform. With over 250 successful online stores and continuous updates in design and features, Vira Process is recognized as one of the strongest e-commerce companies.",
     "colorCompony": "#05AAFF"
   }
 ]

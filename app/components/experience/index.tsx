@@ -64,6 +64,7 @@ const Experience = () => {
               colorCompony={item.colorCompony}
               details={item.details}
               id={item.id}
+              url={item.link}
             />
           ))}
         </div>
