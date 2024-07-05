@@ -44,10 +44,11 @@ const About = () => {
 
       <div className="h-svh bg-custom-black flex relative items-center justify-center">
         <p className="custom-container about-title text-center font-thin lg:text-[4vw] sm:text-[5vw] text-[7.5vw] text-custom-white inline-div">
-          Hi I'm <strong>Abolf</strong>azl! a <strong>fro</strong>ntend
-          developer and <strong>JavaS</strong>cript enthusiast with a bachelor's{" "}
-          <strong>degre</strong>e and over <strong>4 yea</strong>rs of
-          <strong>expe</strong>rience. I've <strong>succes</strong>sfully
+          Hi I&apos;m <strong>Abolf</strong>azl! a <strong>fro</strong>ntend
+          developer and <strong>JavaS</strong>cript enthusiast with a{" "}
+          <strong>bach</strong>elor&apos;s <strong>degre</strong>e and over{" "}
+          <strong>4 yea</strong>rs of
+          <strong>expe</strong>rience. I&apos;ve <strong>succes</strong>sfully
           delivered <strong>hig</strong>h-quality user <strong>int</strong>
           erface <strong>soluti</strong>ons for <strong>star</strong>tups and{" "}
           <strong>enterp</strong>rise companies, <strong>gain</strong>ing

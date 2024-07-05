@@ -53,7 +53,7 @@ const Experience = () => {
           EXPERIENCE
         </h2>
       </div>
-      <div className="flex flex-col w-full my-20 bg-custom-black text-white">
+      <div className="flex flex-col w-full py-20 bg-custom-black text-white">
         <div className="lg:gap-28 gap-12 flex flex-col mt-20 h-full custom-container">
           {experienceData.map((item) => (
             <ExperienceDetails

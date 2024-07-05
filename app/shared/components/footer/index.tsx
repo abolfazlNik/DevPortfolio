@@ -29,7 +29,10 @@ const Footer = () => {
           <span className="lg:text-[2vw] text-xl text-custom-black font-normal lg:font-light">
             Got a question
           </span>
-          <span className="lg:text-[2.5vw] text-3xl font-semibold text-white cursor-pointer" onClick={() => toggleModal(true)}>
+          <span
+            className="lg:text-[2.5vw] text-3xl font-semibold text-white cursor-pointer"
+            onClick={() => toggleModal(true)}
+          >
             Contact Us
           </span>
         </div>
