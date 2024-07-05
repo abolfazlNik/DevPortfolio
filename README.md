@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio
 
-## Getting Started
+This portfolio has been designed and developed by myself to showcase my experiences and demonstrate my capabilities. It is a substantial project built using Next.js and TypeScript, incorporating GSAP and Lenis for animations. Tailwind CSS is used for styling, Zod for form validation, and React Hook Form for form management. Additionally, Zustand is utilized for state management.
 
-First, run the development server:
+In the portfolio's contact section, you can reach out to me via a Telegram bot that I have created to receive your messages.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
+- **Next.js**: The React framework for production.
+- **TypeScript**: JavaScript with syntax for types.
+- **GSAP & Lenis**: Libraries for animations.
+- **Tailwind CSS**: Utility-first CSS framework.
+- **Zod**: TypeScript-first schema declaration and validation library.
+- **React Hook Form**: Performant, flexible, and extensible forms with easy-to-use validation.
+- **Zustand**: Bear necessities for state management.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
+To install and run this project locally, follow these steps:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/portfolio.git
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Create a `.env.local` file and fill it with the required environment variables:
+    ```plaintext
+    BOT_TOKEN=your-telegram-bot-token
+    BOT_CHAT_ID=your-telegram-chat-id
+    ```
+   You can refer to the `.env.example` file for guidance.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+5. Run the development server:
+    ```bash
+    npm run dev
+    ```
 
-## Learn More
+## Credits
+- **Design & Development**: [Abolfazl Nik](https://github.com/abolfazlNik)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+This project is open source and available for anyone to use freely.
