@@ -16,7 +16,7 @@ export default function Home() {
       <GlobalInitializer />
       <div className="h-svh">
         <Header />
-        <div className="lg:mx-[70px] mx-[22px] lg:h-[85%] h-full flex items-center justify-center">
+        <div className="lg:mx-[70px] mx-[22px] lg:h-[85%] h-full flex items-center justify-center select-none">
           <Image
             className="w-full select-none lg:mb-0 h-full mb-40"
             src={nikName}

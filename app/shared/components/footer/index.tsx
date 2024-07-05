@@ -20,7 +20,7 @@ const Links: FC<ILinks> = ({ link, name }) => (
 const Footer = () => {
   const { toggleModal } = useModalState()
   return (
-    <footer className="relative h-dvh w-full bg-[#8276B9] flex items-center justify-between font-open-sans px-[30px] sm:px-[60px] lg:pl-[70px] before:bg-[url('./../public/images/extensive-nik.webp')] before:bg-no-repeat before:absolute before:top-0 before:right-0 before:content-[''] lg:before:mix-blend-normal before:mix-blend-difference before:w-full lg:before:w-[730px] xl:before:w-[850px] before:h-full before:bg-cover">
+    <footer className="relative sm:h-screen h-svh w-full bg-[#8276B9] flex items-center justify-between font-open-sans px-[30px] sm:px-[60px] lg:pl-[70px] before:bg-[url('./../public/images/extensive-nik.webp')] before:bg-no-repeat before:absolute before:top-0 before:right-0 before:content-[''] lg:before:mix-blend-normal before:mix-blend-difference before:w-full lg:before:w-[730px] xl:before:w-[850px] before:h-full before:bg-cover">
       <div className="lg:w-1/2 w-full mb-10 pt-20 lg:pt-36 h-full flex justify-between flex-col z-[2]">
         <div className="lg:text-[6vw] text-7xl font-bold text-custom-black">
           Contact
