@@ -6,14 +6,14 @@ interface CustomLenisOptions extends LenisOptions {
 
 const SmoothScroll = () => {
   const lenis = new Lenis({
-    duration: 1,
+    duration: 1.5,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     direction: "vertical",
     gestureDirection: "vertical",
     smooth: true,
-    mouseMultiplier: 1,
+    mouseMultiplier: 0.5,
     smoothTouch: false,
-    touchMultiplier: 2,
+    touchMultiplier: 1.5,
     infinite: false,
   } as CustomLenisOptions)
 

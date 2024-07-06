@@ -13,7 +13,11 @@ const ScrollToTop = () => {
     if (!pathname) return
 
     const handleRouteChange = () => {
-      gsap.to(window, { duration: 1, scrollTo: { y: 0 } })
+      gsap.to(window, {
+        duration: 1.5,
+        scrollTo: { y: 0 },
+        ease: "cubic-bezier(.29, 1.01, 1, -0.68);",
+      })
     }
 
     handleRouteChange()
